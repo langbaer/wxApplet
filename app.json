@@ -1,12 +1,20 @@
 {
   "pages":[
-    "pages/my/my",
-    "pages/cart/cart",
-    "pages/cate/cate",
     "pages/home/home",
+    "pages/cate/cate",
+    "pages/cart/cart",
+    "pages/my/my",
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "subPackages":[{
+    "root": "subpkg",
+    "name": "pack2",
+    "pages": [
+      "goods_detail/goods_detail",
+      "goods_list/good_list"
+    ]
+  }],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",

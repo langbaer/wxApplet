@@ -5,6 +5,7 @@
   width: 100%;
   height: 150rpx;
   border-top:5rpx solid #7A7E83;
+  background-color: white;
 }
 
 .box {

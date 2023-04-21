@@ -1,2 +1,42 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- 轮播图 -->
+<view class="swpierFrame">
+<swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true">
+<block wx:for="{{spwierList}}" wx:key="goods_id">
+<swiper-item>
+<navigator url="/subpkg/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="navToGoods"></navigator>
+<image src="{{item.image_src}}" mode="widthFix"></image>
+</swiper-item>
+</block>
+</swiper>
+</view>
+<!-- 分类栏 -->
+<view class="navFrame">
+<view wx:for="{{navList}}" wx:key="index" class="navBox">
+<view class="navBoxPic"><image mode="widthFix" src="{{item.image_src}}" bindtap="navToPages" data-name="{{item.name}}"></image></view>
+</view>
+</view>
+<!-- 楼层 -->
+<view class="floorFrame">
+<view class="floorBox" wx:for="{{floorList}}" wx:key="index">
+<view class="floorNav">
+<view class="floorNavPic"><image mode="widthFix" src="{{item.floor_title.image_src}}"></image></view>
+</view>
+<view class="floorBottomBoxFrame">
+<view class="floorBottomBoxLeft">
+<navigator class="floorNavBigBox" url="{{item.product_list[0].url}}">
+<image src="{{item.product_list[0].image_src}}" mode="aspectFill"></image>
+</navigator>
+</view>
+<view class="floorBottomBoxRight">
+<view class="floorBottomBoxPic boxFrame" wx:for="{{item.product_list}}" wx:for-index="childindex" wx:if="{{childindex!==0}}" style="margin-top:{{childindex>=3?marginData:marginData2}};">
+<navigator class="floorNavSmallBox" url="{{item.url}}">
+<image src="{{item.image_src}}" mode="widthFix" class="floorPic floorPic{{index}}{{childindex}}"></image>
+</navigator>
+</view>
+</view>
+</view>
+</view>
+</view>
+<!-- 把tabbar覆盖的部分顶上来 -->
+<view class="bottom"></view>

@@ -1,1 +1,87 @@
 /* pages/home/home.wxss */
+swiper {
+  width: 100%;
+  height: 330rpx;
+}
+image {
+  width: 100%;
+}
+.navToGoods {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.navFrame {
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  width: 100%;
+  padding: 30rpx 0;
+}
+.navBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.navBoxPic {
+  width: 128rpx;
+}
+
+.floorFrame {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.floorBox {
+  width: 100%;
+}
+.floorNav {
+  width: 100%;
+  height: 60rpx;
+}
+.floorBottomBoxFrame {
+  display: flex;
+  width: 100%;
+}
+.floorBottomBoxLeft {
+position: relative;
+  width: 50%;
+  margin-left: 10rpx;
+}
+.floorNavBigBox {
+  display: flex;
+width: 100%;
+}
+.floorBottomBoxRight {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.boxFrame {
+  width: 233rpx;
+  height: 240rpx;
+  margin-left: 10rpx;
+  overflow: hidden;
+}
+.floorPic {
+  width: 160%;
+  height: 160%;
+}
+.bottom {
+  width: 100%;
+  height: 150rpx;
+}
+.floorPic13 {
+  width: 110%;
+  height: 110%;
+}
+.floorPic23 {
+  width: 120%;
+  height: 120%;
+}
+.floorPic22 {
+  width: 130%;
+  height: 130%;
+}
