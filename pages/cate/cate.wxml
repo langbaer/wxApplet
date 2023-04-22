@@ -1,2 +1,23 @@
 <!--pages/cate/cate.wxml-->
-<text>pages/cate/cate.wxml</text>
+<view class="frame">
+<!-- 左侧盒子 -->
+<scroll-view class="leftBigBox" scroll-y="true" style="height:{{wh-75}}px;">
+<view class="activeBox" style="top: {{leftBoxdistancetop+10}}px;"></view>
+<view class="leftSmallBox" wx:for="{{cateList}}" wx:key="index" bindtap="changeStyle" data-index="{{index}}">{{item.cat_name}}</view>
+</scroll-view>
+<!-- 右侧盒子 -->
+<view class="rightBigBoxFrame">
+<scroll-view class="rightBigBox" scroll-y="true" style="height:{{wh-75}}px;" wx:for="{{cateList2}}" wx:for-index="index2"  wx:for-item="item2" wx:key="index2" wx:if="{{index2===lBoxIndex?Iamtrue:Iamfalse}}">
+<view class="rightSmallBox" wx:for="{{item2}}"  wx:for-index="childindex2" wx:for-item="childitem2">
+<view class="rightSmallBoxTitle">/{{childitem2.cat_name}}/</view>
+<view class="rGoodsFrame">
+<view class="rGoods" wx:for="{{childitem2.children}}" wx:for-index="childindex3" wx:for-item="childitem3">
+<view class="rGoodsPicFrame"><image  mode="widthFix" class="rGoodsPic" bindtap="navToGoodList" data-datapid3="{{childitem3.cat_id}}"></image></view>
+<view class="rGoodsText">{{childitem3.cat_name}}</view>
+</view>
+</view>
+</view>
+</scroll-view>
+</view>
+
+</view>

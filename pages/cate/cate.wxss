@@ -1,1 +1,71 @@
 /* pages/cate/cate.wxss */
+image {
+  width: 100%;
+  height: 100%;
+}
+.frame {
+  width: 100%;
+  display: flex;
+}
+.leftBigBox {
+  position: relative;
+  width: 240rpx;
+  background-color: #f7f7f7;
+  text-align: center;
+  font-size: 12px;
+}
+.leftSmallBox {
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.activeBox {
+  position: absolute;
+  left: 0;
+  background-color: #3cc51f;
+  width: 20rpx;
+  height: 80rpx;
+  transition: top 0.5s ease;
+}
+.rightBigBoxFrame {
+  flex: 1;
+}
+.rightBigBox {
+  width: 100%;
+}
+.rightSmallBox {
+  width: 100%;
+}
+.rightSmallBoxTitle {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  padding: 15rpx 0;
+}
+.rGoodsFrame {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.rGoods {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+  margin-bottom: 20rpx;
+}
+.rGoodsPicFrame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 120rpx;
+}
+
+.rGoodsPic {
+  width: 120rpx;
+  height: 120rpx;
+}
+.rGoodsText {
+  text-align: center;
+  font-size: 24rpx;
+}
