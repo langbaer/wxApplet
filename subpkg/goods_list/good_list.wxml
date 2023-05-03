@@ -1,2 +1,13 @@
 <!--subpkg/goods_list/good_list.wxml-->
-<text>subpkg/goods_list/good_list.wxml</text>
+<view class="goodsFrame">
+  <view class="box" wx:for="{{goods}}" wx:key="{{item.goods_id}}"  bindtap="navToGoodsdetail" data-item="{{item.goods_id}}">
+    <view class="pic">
+      <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+    </view>
+    <view class="textFrame">
+      <view class="text">{{item.goods_name}}</view>
+      <view class="price">￥{{priceKeeptwo.priceKeeptwo(item.goods_price)}}</view>
+    </view>
+  </view>
+</view>
+<wxs src="/utils/tools.wxs" module="priceKeeptwo"></wxs>

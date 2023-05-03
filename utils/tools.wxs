@@ -1,0 +1,8 @@
+function priceKeeptwo(str){
+  console.log('运行中')
+  var newStr = str.toFixed(2)
+  return newStr
+}
+module.exports = {
+  priceKeeptwo:priceKeeptwo
+}

@@ -1,1 +1,51 @@
 /* subpkg/goods_list/good_list.wxss */
+image{
+  width: 100%;
+  height: 100%;
+  border-radius: 30rpx;
+}
+
+.goodsFrame {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 20rpx 0;
+}
+.pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300rpx;
+  height: 250rpx;
+  overflow: hidden;
+
+}
+.textFrame {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 30rpx;
+}
+.text {
+  overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-line-clamp:2;
+ -webkit-box-orient: vertical;
+  margin: 10rpx 0;
+  font-size: 24rpx;
+}
+.price {
+  margin: 10rpx 0;
+  color: red;
+}
