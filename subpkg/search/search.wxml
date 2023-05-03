@@ -1,0 +1,17 @@
+<!--subpkg/search/search.wxml-->
+<view class="searchFrame">
+  <my-search bindSend="mySearchData"></my-search>
+</view>
+<view class="historyFrame"  wx:if="{{listStatus}}">
+  <view class="history">
+    <view class="nav">
+      <view class="text">搜索历史</view>
+      <view class="img">
+        <image src="/image/search/deletet.png" mode="widthFix" bindtap="deleteStoreSearchHistory"></image>
+      </view>
+    </view>
+    <view class="boxFrame">
+      <view class="box" wx:for="{{searchHistoy}}" bindtap="navToGoodslist" data-itemHistory="{{item}}">{{item}}</view>
+    </view>
+  </view>
+</view>

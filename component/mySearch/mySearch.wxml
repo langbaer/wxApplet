@@ -1,0 +1,12 @@
+<!--component/mySearch/mySearch.wxml-->
+<view class="frame" style="background-color:{{backColor}};">
+  <view class="searchFrame" style="border-radius: {{radius}}rpx;"> 
+    <input bindinput="getSearchList" class="searchIput" auto-focus="true" value="{{searchInputValue}}"></input><icon class="icon-small" type="cancel" size="23" color="gray" style="margin: 0 20rpx;" wx:if="{{jugeValue}}" bindtap="moveValue"></icon><button type="primary" class="searchBut" size="mini" bindtap="navToGoodslist">搜索</button>
+  </view>
+</view>
+<view class="searchList">
+  <view class="listBox" wx:for="{{serchResult}}" wx:key="index" bindtap="navToGoods" data-goodid="{{item.goods_id}}">
+    <view class="listBoxText">{{item.goods_name}}</view>
+    <view class="textIcon">></view>
+  </view>
+</view>

@@ -85,3 +85,8 @@ width: 100%;
   width: 130%;
   height: 130%;
 }
+.search {
+  position: sticky;
+  top:0;
+  z-index: 999;
+}

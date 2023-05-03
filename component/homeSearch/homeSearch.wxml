@@ -1,0 +1,10 @@
+<!--component/homeSearch/homeSearch.wxml-->
+<view class="frame" style="background-color:{{backColor}};">
+  <view class="searchFrame" style="border-radius: {{radius}}rpx;"> 
+    <view bindtop="tapDisplay"	bindblur="textShow" class="searchIput" ></view>
+    <view class="shouldDisplay">
+      <icon type="search" class="shouldDisplayIcon"></icon>
+      <view class="shouldDisplayText">搜索</view>
+    </view>
+  </view>
+</view>

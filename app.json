@@ -12,7 +12,8 @@
     "name": "pack2",
     "pages": [
       "goods_detail/goods_detail",
-      "goods_list/good_list"
+      "goods_list/good_list",
+      "search/search"
     ]
   }],
   "window":{
@@ -38,5 +39,9 @@
     }]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "my-search":"component/mySearch/mySearch",
+    "home-search":"component/homeSearch/homeSearch"
+  }
 }

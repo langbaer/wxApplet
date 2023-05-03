@@ -64,6 +64,11 @@ Page({
       this.updateTabbarStatus(2)
     }
   },
+  navToSearch(){
+    wx.navigateTo({
+      url: '/subpkg/search/search',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

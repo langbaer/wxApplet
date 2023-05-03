@@ -1,0 +1,59 @@
+/* component/mySearch/mySearch.wxss */
+.frame  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+}
+.searchFrame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 72rpx;
+  background-color: #ffffff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.searchIput {
+  width: 90%;
+}
+.searchBut {
+  width: 100rpx!important;
+  font-size: 24rpx!important;
+  padding: 8rpx 12rpx;
+  margin: 0;
+  border-radius: 100rpx;
+}
+.searchList {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.listBox {
+  width: 100%;
+  font-size: 24rpx;
+  padding: 26rpx 0;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.listBoxText {
+  display: -webkit-box;
+  width: 80%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.textIcon {
+  width: 5%;
+text-align: center;
+}
+
+
