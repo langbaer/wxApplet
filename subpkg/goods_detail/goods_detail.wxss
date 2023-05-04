@@ -1,1 +1,99 @@
 /* subpkg/goods_detail/goods_detail.wxss */
+image {
+  width: 100%;
+}
+.goodSwpier{
+  width: 100%;
+}
+.swiper1 {
+  width: 100%;
+  height: 750rpx;
+  overflow: hidden;
+}
+.info-box {
+  width: 100%;
+  padding: 20rpx;
+}
+.price {
+  width: 100%;
+  font-size: 36rpx;
+  margin: 20rpx 0;
+  color: red;
+}
+.nameCollection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20rpx 0;
+  font-size: 26rpx;
+  box-sizing: border-box;
+}
+.goodName {
+  width: 80%;
+  height: 55rpx;
+  line-height: 55rpx;
+  padding-right: 55rpx;
+  box-sizing: border-box;
+}
+.collection{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width:20%;
+  box-sizing: border-box;
+  border-left:2rpx solid rgb(172, 171, 171) ;
+}
+.collectionPic {
+  width: 60rpx;
+  height: 60rpx;
+}
+.postage {
+  font-size: 24rpx;
+  margin: 20rpx 0;
+  color: gray;
+}
+.buttomShop {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 150rpx;
+  background-color: #ffffff;
+  font-size: 24rpx;
+  border-top: 2rpx solid #3cc51f;
+  box-sizing: border-box;
+}
+.buttomIcon {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 70rpx;
+}
+.buttomIcontext {
+  width: 100%;
+  text-align: center;
+}
+.bigBox {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  height: 100rpx;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.bigBoxSame {
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  color: #ffffff;
+}
+.addCart {
+  background-color: #3cc51f;
+}
+.buyNow {
+  background-color: red;
+}

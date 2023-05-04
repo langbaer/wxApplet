@@ -35,7 +35,6 @@ Page({
     isloading: false
    })
    cb&&cb()
-   console.log(res)
   },
   ////点击商品跳转到goodsdetail页面
   navToGoodsdetail(e){

@@ -1,2 +1,34 @@
 <!--subpkg/goods_detail/goods_detail.wxml-->
-<text>subpkg/goods_detail/goods_detail.wxml</text>
+<view class="goodSwpier">
+  <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true" class="swiper1">
+     <swiper-item wx:for="{{goods_pics}}" >
+       <image class="swpierPic" src="{{item.pics_big}}" mode="widthFix" bindtap="preview" data-picurl="{{item.pics_big}}"></image>
+     </swiper-item>
+  </swiper>
+</view>
+<view class="info-box">
+  <view class="price">￥{{priceKeeptwo.priceKeeptwo(goods_info.goods_price)}}
+  </view>
+  <view class="nameCollection">
+    <view class="goodName" wx:if="{{goods_info.goods_name}}">{{goods_info.goods_name}}</view>
+    <view class="collection"><image src="{{collcetionPic1}}" class="collectionPic" mode="widthFix" bindtap="collectionGood"></image><view class="collectionText">收藏</view></view>
+  </view>
+  <view class="postage">快递:免运费</view>
+</view>
+<rich-text nodes=" {{goods_introduce}}"> 
+</rich-text>
+<view class="buttomShop">
+  <view class="buttomIcon">
+    <image class="buttomIconPic" src="/image/goodsdetail/shopper.png" mode="widthFix"></image>
+    <view class="buttomIcontext">店铺</view>
+  </view>
+  <view class="buttomIconPic" bindtap="navToCart">
+    <image class="buttomIcon" src="/image/goodsdetail/cart.png" mode="widthFix"></image>
+    <view class="buttomIcontext">购物车</view>
+  </view>
+  <view class="bigBox">
+    <view class="addCart bigBoxSame">加入购物车</view>
+    <view class="buyNow bigBoxSame">立即购买</view>
+  </view>
+</view>
+<wxs src="/utils/tools.wxs" module="priceKeeptwo"></wxs>

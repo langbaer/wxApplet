@@ -1,7 +1,10 @@
 function priceKeeptwo(str){
-  console.log('运行中')
-  var newStr = str.toFixed(2)
-  return newStr
+  if(typeof(str)=='undefined'){
+    return '0.00'
+  }
+  else {
+    return str.toFixed(2)
+  }
 }
 module.exports = {
   priceKeeptwo:priceKeeptwo
