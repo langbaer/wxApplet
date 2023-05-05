@@ -27,8 +27,54 @@
     <view class="buttomIcontext">购物车</view>
   </view>
   <view class="bigBox">
-    <view class="addCart bigBoxSame">加入购物车</view>
-    <view class="buyNow bigBoxSame">立即购买</view>
+    <view class="addCart bigBoxSame" bindtap="addCartBoxTap"  data-cartOrBuy="1">加入购物车</view>
+    <view class="buyNow bigBoxSame" bindtap="addCartBoxTap" 
+    data-cartOrBuy="2">立即购买</view>
   </view>
 </view>
+<page-container show="{{addToCartbacShow}}" duration="500" overlay-style="background-color: rgba(0, 0, 0, 0.7)">
+<view class="addToCartbac">
+  <view class="addToCartFrame">
+    <view class="addToCartTopBox">
+      <view class="addToCartTopBoxLeft">
+        <image src="{{goods_pics[0].pics_sma}}" mode="heightFix" class="pics_sma"></image>
+        <view class="addToCartTopBoxLeftPrice">￥{{priceKeeptwo.priceKeeptwo(goods_info.goods_price)}}</view>
+      </view>
+      <icon type="cancel" size="28" color="gray" bindtap="closeCart"></icon>
+     </view>
+     <scroll-view scroll-y="true" style="height: {{wh-175}}px;">
+     <view class="adress">
+      <view class="userInfo">
+         <view class="consignee">111</view>
+         <view class="phone">15170751269</view>
+      </view>
+      <view class="fullAddress">广西省河池市都安自治县永安镇</view>
+     </view>
+     <view class="goodStyle">
+       <view class="goodStyleTitle">款式:</view>
+       <view class="goodStyleContent">服务器没给款式</view>
+     </view>
+     <view class="goodSize">
+      <view class="goodSizeTitle">尺码:</view>
+      <view class="goodSizeContent">服务器没给尺码</view>
+     </view>
+     <view class="goodCount">
+      <view class="goodCountLeft">数量:</view>
+      <view class="goodCountButton">
+        <button type="default" size="mini" class="countButtom" bindtap="minusOne">-</button>
+        <view class="count">{{goodcount}}</view>
+        <button type="default" size="mini"  class="countButtom" bindtap="addOne">+</button>
+      </view>
+     </view>
+    </scroll-view>
+    </view>
+</view>
+<!-- 分割 -->
+<view class="submitCart" wx:if="{{cartOrBuy===1}}" bindtap="storeCartAddGoods">
+      <view class="submitButton">加入购物车</view>
+    </view>
+<view class="submitCart" wx:if="{{cartOrBuy===2}}">
+      <view class="submitButton" style="background-color:red;">立即购买</view>
+</view>
+</page-container>
 <wxs src="/utils/tools.wxs" module="priceKeeptwo"></wxs>

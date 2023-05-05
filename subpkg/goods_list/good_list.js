@@ -38,7 +38,6 @@ Page({
   },
   ////点击商品跳转到goodsdetail页面
   navToGoodsdetail(e){
-    console.log(e)
     wx.navigateTo({
       url: '/subpkg/goods_detail/goods_detail?goods_id='+e.currentTarget.dataset.item,
     })

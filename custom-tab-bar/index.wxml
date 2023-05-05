@@ -1,7 +1,10 @@
 <!--custom-tab-bar/index.wxml-->
 <view class="frame">
-<vie class="box" wx:for="{{list}}" wx:key="id" bindtap="navPages"  data-thisid="{{item.id}}" data-src="{{item.pagesPath}}">
-<view class="pic"><image mode="widthFix" src="{{tabbarStatus===item.id?item.selectPic:item.unselectPic}}" catchtap="navPages" data-thisid="{{item.id}}" data-src="{{item.pagesPath}}" ></image></view>
+<view class="box" wx:for="{{list}}" wx:key="id" bindtap="navPages"  data-thisid="{{item.id}}" data-src="{{item.pagesPath}}">
+<view class="pic">
+<image mode="widthFix" src="{{tabbarStatus===item.id?item.selectPic:item.unselectPic}}" catchtap="navPages" data-thisid="{{item.id}}" data-src="{{item.pagesPath}}" ></image>
+<view class="dot" wx:if="{{item.dataStore}}">{{item.dataStore}}</view>
+</view>
 <view class="text" catchtap="navPages" data-thisid="{{item.id}}" data-src="{{item.pagesPath}}" style="color:{{tabbarStatus===item.id?selectTextColor:unselectTextColor}}">{{item.text}}</view>
-</vie>
+</view>
 </view>

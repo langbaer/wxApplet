@@ -50,7 +50,6 @@ Page({
     this.setData({
       floorList:res.message
     })
-    console.log(this.data.floorList)
   },
 
   /////分类导航的点击跳转函数   bindtap

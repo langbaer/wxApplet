@@ -4,11 +4,12 @@
   justify-content: center;
   width: 100%;
   height: 150rpx;
-  border-top:5rpx solid #7A7E83;
+  border-top:2rpx solid #3cc51f;
   background-color: white;
 }
 
 .box {
+  
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -18,6 +19,7 @@
 
 }
 .pic {
+  position: relative;
   width: 80rpx;
   height: 80rpx;
 
@@ -29,4 +31,16 @@ image {
   width: 80rpx;
   text-align: center;
   font-size: 25rpx;
+}
+.dot {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  padding: 8rpx 12rpx;
+  background-color: red;
+  height: 24rpx!important;
+  line-height: 24rpx!important;
+  font-size: 24rpx!important;
+  border-radius: 20rpx;
+  color: white;
 }

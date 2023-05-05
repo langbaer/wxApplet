@@ -9,20 +9,17 @@ Component({
     store,
     fields:{
       tabbarStatus:'tabbarStatus',
+      cartCount:'cartCount'
       
     },
     actions:{
       updateTabbarStatus:'updateTabbarStatus'
     }
   },
-
-
-
   /**
    * 组件的属性列表
    */
   properties: {
-
   },
 
   /**
@@ -44,7 +41,7 @@ Component({
       pagesPath:'/pages/cate/cate',
       unselectPic:'../image/tabbar/classify.png',
       selectPic:'../image/tabbar/classify1.png',
-      dataStore:0
+      dataStore:0,
     },{
       id:3,
       text:"购物车",
@@ -61,18 +58,29 @@ Component({
       dataStore:0
     },]
   },
+  pageLifetimes:{
+  },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
     /////点击导航到
     navPages(e){
       wx.switchTab({
         url: e.target.dataset.src,
       })
       this.updateTabbarStatus(e.target.dataset.thisid)
+    },
+    
+  },
+  observers:{
+    ///dataStore购物车的商品数量
+    'cartCount':function(newCartCount){
+      this.setData({
+        'list[2].dataStore':newCartCount.length,
+      })
     }
   }
+  
 })
