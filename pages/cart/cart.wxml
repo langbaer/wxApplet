@@ -6,6 +6,54 @@
     <view class="addressIcon"><image src="{{addressIcon}}" mode="widthFix"></image></view>
     <view class="addressText" bindtap="myAddressShow">{{showAddress.address}}</view>
   </view>
-  <view class="changeCart">管理</view>
+  <view class="changeCart" bindtap="showDeleteBox">管理</view>
+</view>
+<scroll-view scroll-y="true" style="height: {{wh-200}}px;">
+  <view class="selectGoodBoxFrame" wx:for="{{cartCount}}" wx:key="goods_id">
+    <view class="selectButton">
+      <switch type="checkbox" bindchange="selecGoods" data-goods_id="{{item.goods_id}}" checked="{{item.goods_state}}"></switch>
+    </view>
+    <view class="selectGoodBox" catchtap="hideAddGoodCount">
+       <view class="goodPic">
+        <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+       </view>
+       <view class="goodText">
+         <view class="goodName">{{item.goods_name}}</view>
+         <view class="goodPrice">￥{{item.goods_price}}</view>
+       </view>
+    </view>
+    <view class="goodCount" catchtap="showAddGoodCount" data-goodid="{{item.goods_id}}">
+      X{{item.goods_count}}
+    </view>
+    <view class="addGoodCount" style="width: {{addGoodCountHeigh}}rpx;" wx:if="{{selectGood===item.goods_id&&addGoodCountHeigh}}" >
+      <button size="mini" class="subtractOne changeGoodCountFrame" bindtap="subtractOne">-</button>
+      <view class="goodCount2">{{item.goods_count}}</view>
+      <button size="mini" class="addOne changeGoodCountFrame"
+      bindtap="addOne">+</button>
+    </view>
+    <view class="deleteBoxFrame" wx:if="{{showdeleteBoxData}}" bindtap="deleteCartGood" data-goodid="{{item.goods_id}}">
+       <view class="deleteBox22">
+         <image src="/image/goodsdetail/delete.png" mode="widthFix"></image>
+       </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="settlement">
+   <view class="selectAll">
+     <switch type="checkbox" bindchange="selectAll" checked="{{allGoodsState}}"></switch>
+     <view class="checkboxText">全选</view>
+   </view>
+   <view class="settlemenTtotal">
+     <view class="totalPrice">
+       <view class="totalPriceText">合计</view>
+       <view class="totalPriceSymbol">￥</view>
+       <view class="totalPriceNumberFrame">
+         {{totalPrice}}
+       </view>
+     </view>
+     <view class="settlemenButtonFrame">
+       <button class="settlemenButton">结算</button>
+     </view>
+   </view>
 </view>
 <my-address show="{{myaddressShow}}"></my-address>

@@ -11,6 +11,10 @@ export const store = observable({
   addressArr:wx.getStorageSync('addressData')||[],
   /////该显示哪条地址
   showAddress:{},
+  ////需要结算的总价格
+  totalPrice:0,
+  ////是否购物车中的商品都在结算状态中 0表示不是，1表示是
+  allGoodsState:0,
 
   /////改变tabber的状态
   updateTabbarStatus:action(function(step){
@@ -19,6 +23,8 @@ export const store = observable({
   ////添加cartCount
   updateCartCount:action(function(obj){
     this.cartCount = obj
+    this.totalAllGoodsPrice()
+    this.checkoutCarCountStatus()
   }),
   ////改变addressArr中defaultValue的状态
   updateAddressArr:action(function(id){
@@ -107,5 +113,139 @@ export const store = observable({
       data:this.addressArr
     })
     this.updateShowAddress()
+  }),
+  ////修改cartCount的数据,商品的数量
+  updataCartCount2:action(function(id,addOrSubtract){
+    const newCartCount = this.cartCount.map((item)=>{
+      if(item.goods_id===id){
+        let goodsCount = 0
+        if(addOrSubtract){
+          goodsCount = item.goods_count+1
+        }
+        else {
+          goodsCount = item.goods_count-1
+        }
+        return {
+          goods_count:goodsCount,
+          goods_id:item.goods_id,
+          goods_name:item.goods_name,
+          goods_price:item.goods_price,
+          goods_small_logo:item.goods_small_logo,
+          goods_state:item.goods_state
+        }
+      }
+      return item
+    })
+    this.cartCount = newCartCount
+    wx.setStorage({
+      key:'cartData',
+      data:this.cartCount
+    })
+    this.totalAllGoodsPrice()
+  }),
+  ///////跟新需要结算商品的总价钱
+  totalAllGoodsPrice:action(function(){
+    let totalPrice1 = 0
+    this.cartCount.forEach((item)=>{
+      if(item.goods_state===2){
+        totalPrice1 += item.goods_price*item.goods_count
+      }
+    })
+    this.totalPrice =totalPrice1
+  }),
+  ////更新结算商品数据,增加结算商品,减少结算商品
+  updateCartCount3:action(function(id,status){
+    let goodsstate = 2
+    if(status){
+      goodsstate = 2
+    }
+    else {
+      goodsstate = 0
+    }
+    const newSelecGoodsettlementAdd = this.cartCount.map((item)=>{
+      if(item.goods_id===id){
+        return {
+          goods_id:item.goods_id,
+          goods_name:item.goods_name,
+          goods_price:item.goods_price,
+          goods_count:item.goods_count,
+          goods_small_logo:item.goods_small_logo,
+          goods_state:goodsstate
+        }
+      }
+      return item
+    })
+    this.cartCount = newSelecGoodsettlementAdd
+    wx.setStorage({
+      key:'cartData',
+      data:this.cartCount
+    })
+    this.totalAllGoodsPrice()
+    this.checkoutCarCountStatus()
+  }),
+  /////将购物车的数据全部结算或者全部不结算
+  updataCartCount4:action(function(allOrNone){
+    if(allOrNone){
+      for(let i = 0;i<this.cartCount.length;i++){
+        this.cartCount[i].goods_state = 2
+      }
+      const new1 = this.cartCount.map((item)=>{
+        return item
+      })
+      this.cartCount = new1
+      wx.setStorage({
+        key:'cartData',
+        data:this.cartCount
+      })
+      this.totalAllGoodsPrice()
+      return
+    }
+    for(let i = 0;i<this.cartCount.length;i++){
+      this.cartCount[i].goods_state = 0
+    }
+    const new1 = this.cartCount.map((item)=>{
+      return item
+    })
+    this.cartCount = new1
+    wx.setStorage({
+      key:'cartData',
+      data:this.cartCount
+    })
+    this.totalAllGoodsPrice()
+  }),
+   ////检查购物车所有的商品是否都选上了
+   checkoutCarCountStatus:action(function() {
+     let status =  this.cartCount.find((item)=>{
+      if(item.goods_state!==2){
+        return item
+      }
+    })
+    if(status){
+      this.allGoodsState = 0
+    }else{
+      this.allGoodsState = 1
+    }
+  }),
+  ////删除购物车中的商品
+  updataCartCount5:action(function (id) {
+    let new1 = 0
+    this.cartCount.find((item,index)=>{
+      if(item.goods_id===id){
+        new1 = index
+      }
+    })
+    this.cartCount.splice(new1,1)
+    const newCartCount = this.cartCount.map((item)=>{
+      return item
+    })
+    this.cartCount = newCartCount
+    wx.setStorage({
+      key:'cartData',
+      data:this.cartCount
+    })
+    this.totalAllGoodsPrice()
+    this.checkoutCarCountStatus()
   })
 })
+
+ 

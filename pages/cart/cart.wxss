@@ -36,3 +36,146 @@ image {
   white-space: nowrap;
   padding: 36rpx 0;
 }
+.settlement{
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150rpx;
+  width: 100%;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.selectAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+}
+.checkboxText {
+  margin-left: 20rpx;
+}
+.totalPriceSymbol {
+  color: red;
+}
+.settlemenTtotal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.totalPrice {
+  display: flex;
+  align-items: flex-end;
+  font-size: 26rpx;
+  transform: translateY(-20%);
+}
+.totalPriceNumberFrame {
+  font-size: 40rpx;
+  color: red;
+}
+.settlemenButtonFrame {
+  width: 200rpx;
+  margin-left: 20rpx;
+}
+.settlemenButtonFrame .settlemenButton {
+  width: 200rpx;
+  background-color: #3cc51f;
+  border-radius: 40rpx;
+  color: #ffffff;
+}
+.selectGoodBoxFrame {
+  position: relative;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+}
+.selectButton {
+  position: absolute;
+  left: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.selectGoodBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  box-sizing: border-box;
+}
+.goodCount {
+  position: absolute;
+  z-index: 1;
+  right: 40rpx;
+  bottom: 25rpx;
+  border: 1rpx solid #3cc51f;
+  color: #3cc51f;
+  font-size: 28rpx;
+  padding: 5rpx;
+  border-radius: 30rpx;
+}
+.goodPic {
+  display: flex;
+  width: 200rpx;
+}
+.goodText {
+  margin-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+.addGoodCount {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  right: 35rpx;
+  bottom: 25rpx;
+  border: 1rpx solid #3cc51f;
+  color: #3cc51f;
+  border-radius: 30rpx;
+  overflow: hidden;
+  transition: all 1s;
+  box-sizing: border-box;
+}
+.addGoodCount .changeGoodCountFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100rpx!important;
+  height: 50rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.goodCount2 {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.deleteBoxFrame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200rpx;
+  height: 220rpx;
+  /* border: 2rpx solid gray; */
+  box-sizing: border-box;
+}
+.deleteBox22 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  height: 170rpx;
+  background-color: red;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+}
