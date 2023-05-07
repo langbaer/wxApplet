@@ -13,7 +13,9 @@
     "pages": [
       "goods_detail/goods_detail",
       "goods_list/good_list",
-      "search/search"
+      "search/search",
+      "address/address",
+      "changeAddress/changeAddres"
     ]
   }],
   "window":{
@@ -42,7 +44,8 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "my-search":"component/mySearch/mySearch",
-    "home-search":"component/homeSearch/homeSearch"
+    "home-search":"component/homeSearch/homeSearch",
+    "my-address":"component/myAddress/myAddress"
   }
 }
 

@@ -1,1 +1,38 @@
 /* pages/cart/cart.wxss */
+image {
+  width: 100%;
+}
+.myaddress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+.cartCountBox {
+  display: flex;
+  align-items: flex-end;
+  font-size: 24rpx;
+}
+.cartText {
+  font-size: 30rpx;
+  padding: 36rpx 0;
+}
+.cartCount {
+  padding: 36rpx 0;
+}
+.addressIcon {
+  margin-left: 20rpx;
+  width: 24rpx;
+  height: 24rpx;
+  padding: 36rpx 0;
+}
+.addressText {
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding: 36rpx 0;
+}

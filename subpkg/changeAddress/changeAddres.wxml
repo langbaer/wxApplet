@@ -1,0 +1,27 @@
+<!--subpkg/changeAddress/changeAddres.wxml-->
+<view class="title">
+  <view class="titleBox">请填写收货地址用于商品配送</view>
+</view>
+<view class="address">
+  <form bindsubmit="formSubmit">
+  <view class="username addressBoxFrame">
+    <view class="username1 addressBoxFrame1">收货人</view>
+    <input type="text" class="username2 addressBoxFrame2" name="username" value="{{selectAddress.username}}"></input>
+  </view>
+  <view class="phone addressBoxFrame">
+    <view class="phone1 addressBoxFrame1">手机号码</view>
+    <input type="number" class="phone2 addressBoxFrame2" name="phone" value="{{selectAddress.phone}}"></input>
+  </view>
+  <view class="address3 addressBoxFrame">
+    <view class="address1 addressBoxFrame1">详细地址</view>
+    <textarea type="text" class="address2 addressBoxFrame2" name="address" value="{{selectAddress.address}}"></textarea>
+  </view>
+  <view class="defaultValue addressBoxFrame">
+    <view class="defaultValueText">是否设置为默认值</view>
+    <switch type="checkbox" bindchange="changeDefaultValue" checked="{{selectAddress.defaultValue}}"/>
+  </view>
+  <view class="buttonToSave ">
+    <button formType="submit" class="buttonClass" type="default">保存</button>
+  </view>
+</form>
+</view>

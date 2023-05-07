@@ -1,0 +1,82 @@
+/* component/myAddress/myAddress.wxss */
+.frame {
+   width: 100%;
+   height: 1000rpx;
+   background-color: #bebebe;
+   padding: 20rpx ;
+   box-sizing: border-box;
+}
+.navtop {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+}
+.iconX {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.addressBox {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.addAddress {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 70rpx;
+}
+.addAddressRight {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  margin-right: 50rpx;
+  color: #ffffff;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.addressContent {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  height: 200rpx;
+  margin-left: 20rpx;
+}
+.userContact {
+  display: flex;
+  align-items: flex-end;
+  font-size: 24rpx;
+
+}
+.phone {
+  margin-left: 20rpx;
+}
+.fullAddress {
+  width: 500rpx;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+}
+.userName {
+  font-size: 28rpx;
+}
+.selectIcon {
+  display: flex;
+  align-items: center;
+  width: 120rpx;
+  height: 200rpx;
+}
+.select {
+  width: 100rpx;
+}

@@ -1,5 +1,5 @@
 <!--custom-tab-bar/index.wxml-->
-<view class="frame">
+<view class="frame" wx:if="{{tabbarShow}}">
 <view class="box" wx:for="{{list}}" wx:key="id" bindtap="navPages"  data-thisid="{{item.id}}" data-src="{{item.pagesPath}}">
 <view class="pic">
 <image mode="widthFix" src="{{tabbarStatus===item.id?item.selectPic:item.unselectPic}}" catchtap="navPages" data-thisid="{{item.id}}" data-src="{{item.pagesPath}}" ></image>

@@ -43,12 +43,12 @@
       <icon type="cancel" size="28" color="gray" bindtap="closeCart"></icon>
      </view>
      <scroll-view scroll-y="true" style="height: {{wh-175}}px;">
-     <view class="adress">
+     <view class="adress" bindtap="navToAddress">
       <view class="userInfo">
-         <view class="consignee">111</view>
-         <view class="phone">15170751269</view>
+         <view class="consignee">{{showAddress.username}}</view>
+         <view class="phone">{{showAddress.phone}}</view>
       </view>
-      <view class="fullAddress">广西省河池市都安自治县永安镇</view>
+      <view class="fullAddress">{{showAddress.address}}</view>
      </view>
      <view class="goodStyle">
        <view class="goodStyleTitle">款式:</view>
@@ -77,4 +77,6 @@
       <view class="submitButton" style="background-color:red;">立即购买</view>
 </view>
 </page-container>
+
+
 <wxs src="/utils/tools.wxs" module="priceKeeptwo"></wxs>

@@ -1,0 +1,31 @@
+<!--component/myAddress/myAddress.wxml-->
+<page-container show="{{show}}" overlay="{{overlay}}" bind:leave="onAfterLeave" bind:enter="onEnter">
+  <view class="frame">
+    <view class="navtop">
+      <view class="centerAddress">收货地址</view>
+      <icon type="cancel" size="30" class="iconX" color="gray" bindtap="closeMyAddress"></icon>
+    </view>
+    <view class="addAddress" bindtap="navToAddress">
+      <view class="addAddressRight">+新增</view>
+    </view>
+    <scroll-view scroll-y="true" class="addressBox" style="height: {{wh-75}}px;">
+      <view class="container" wx:for="{{addressArr}}" wx:key="index">
+        <view class="addressContent">
+          <view class="userContact">
+            <view class="userName">{{item.username}}</view>
+            <view class="phone">{{item.phone}}</view>
+          </view>
+          <view class="fullAddress">{{item.address}}</view>
+        </view>
+        <view class="selectIcon">
+          <view class="select" wx:if="{{item.defaultValue}}" bindtap="select">
+            <image src="/image/goodsdetail/select.png" mode="widthFix"></image>
+          </view>
+          <view class="select" wx:if="{{!item.defaultValue}}" bindtap="select" data-thisid="{{item.id}}">
+            <image src="/image/goodsdetail/unselect.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</page-container>

@@ -135,6 +135,17 @@ Page({
     cartData1.push(obj)
     this.addStorageCart()
   },
+   ////寻找默认地址
+   searchAddress(){
+    this.data.addressArr.forEach((item)=>{
+      if(item.defaultValue===1){
+        this.setData({
+          addressDataIndex:item
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -142,36 +153,43 @@ Page({
     //////向服务器请求数据
     this.setData({
       goods_id:Number(options.goods_id),
+      ////屏幕的尺寸
       wh:wx.getSystemInfoSync().windowHeight
     })
     this.getGoodsinfo()
      /////请求store的数据
      this.storeBindings = createStoreBindings(this,{
       store,
-      fields:[],
-      actions:['updateTabbarStatus','updateCartCount']
+      fields:['addressArr','showAddress'],
+      actions:['updateTabbarStatus','updateCartCount','updateShowAddress']
     })
   },
+  ///点击跳转到adress页面
+  navToAddress(){
+    wx.navigateTo({
+      url: '/subpkg/address/address',
+    })
+    console.log(this.data.showAddress)
+  },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    this.updateShowAddress()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-
   },
 
   /**

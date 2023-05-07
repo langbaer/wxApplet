@@ -28,6 +28,7 @@ Component({
   data: {
     unselectTextColor:"#7A7E83",
     selectTextColor:"#3cc51f",
+    tabbarShow:true,
     list:[{
       id:1,
       text:"首页",

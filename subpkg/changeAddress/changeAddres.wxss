@@ -1,0 +1,54 @@
+/* subpkg/changeAddress/changeAddres.wxss */
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.titleBox {
+  width: 100%;
+  height: 100rpx;
+  background-color: #3cc51f;
+  border-radius: 50rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  color: #ffffff;
+}
+.address {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.addressBoxFrame {
+  display: flex;
+  height: 100rpx;
+  margin: 20rpx;
+  box-sizing: border-box;
+}
+.address3 {
+  height: 200rpx;
+}
+.addressBoxFrame1 {
+  width: 200rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.addressBoxFrame2{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+.defaultValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+}
