@@ -15,7 +15,7 @@
     </view>
     <view class="selectGoodBox" catchtap="hideAddGoodCount">
        <view class="goodPic">
-        <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+        <image src="{{item.goods_small_logo}}" mode="widthFix" class="goodPicP"></image>
        </view>
        <view class="goodText">
          <view class="goodName">{{item.goods_name}}</view>

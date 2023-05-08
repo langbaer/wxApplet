@@ -120,7 +120,7 @@ image {
   width: 200rpx;
 }
 .goodText {
-  margin-left: 20rpx;
+  margin-left: 30rpx;
   box-sizing: border-box;
   font-size: 24rpx;
 }
@@ -178,4 +178,7 @@ image {
   padding: 30rpx;
   box-sizing: border-box;
   border-radius: 40rpx;
+}
+.goodPicP {
+  width: 150rpx;
 }
