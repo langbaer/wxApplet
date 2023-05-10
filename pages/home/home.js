@@ -12,7 +12,9 @@ Page({
     floorList:[],
     marginData:'10rpx',
     marginData2:0,
-    floorNavUrl:''
+    floorNavUrl:'',
+    ////控制登录的组件
+    showlogin:true
   },
 
   /////发起轮播图数据请求的函数

@@ -5,7 +5,8 @@
     "pages/cart/cart",
     "pages/my/my",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/authorization/authorization"
   ],
   "subPackages":[{
     "root": "subpkg",
@@ -45,7 +46,8 @@
   "usingComponents": {
     "my-search":"component/mySearch/mySearch",
     "home-search":"component/homeSearch/homeSearch",
-    "my-address":"component/myAddress/myAddress"
+    "my-address":"component/myAddress/myAddress",
+    "my-login":"component/login/login"
   }
 }
 

@@ -32,7 +32,6 @@ Page({
     this.setData({
       myaddressShow:true
     })
-    console.log(this.data.cartCount)
   },
   //////点击显示AddGoodCount按钮
   showAddGoodCount(e){
@@ -89,13 +88,10 @@ Page({
     /////请求store的数据
     this.storeBindings = createStoreBindings(this,{
       store,
-      fields:['cartCount','addressArr','showAddress','totalPrice','allGoodsState'],
-      actions:['updateCartCount','updateShowAddress','updataCartCount2','updateCartCount3','totalAllGoodsPrice','updataCartCount4','checkoutCarCountStatus','updataCartCount5']
+      fields:['cartCount','addressArr','showAddress','totalPrice','allGoodsState','wh'],
+      actions:['updateCartCount','updateShowAddress','updataCartCount2','updateCartCount3','totalAllGoodsPrice','updataCartCount4','checkoutCarCountStatus','updataCartCount5','checkLogin']
     })
-    ///获取可用屏幕的高
-    this.setData({
-      wh:wx.getSystemInfoSync().windowHeight
-    })
+ 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -113,7 +109,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.checkLogin()
   },
 
   /**

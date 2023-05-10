@@ -1,4 +1,4 @@
-// pages/my/my.js
+// pages/authorization/authorization.js
 import {createStoreBindings} from 'mobx-miniprogram-bindings'
 import {store} from '../../store/store' ////引入store
 Page({
@@ -9,37 +9,9 @@ Page({
   data: {
 
   },
-  //////本地服务器登录
-  login(){
+  wxlogin(){
     this.loginUser()
-  },
-  checklogin(){
-    this.checkLogin()
-  },
-  ///点击跳转到授权页面
-  navToAuthorization(){
-    wx.navigateTo({
-      url: '/pages/authorization/authorization',
-    })
-  },
-  ///点击就下线
-  outLogin1(){
-    var that =this
-    wx.showModal({
-      title: '提示',
-      content: '确定要退出登入吗？',
-      success (res) {
-        if (res.confirm) {
-          that.outLogin()
-        }
-      }
-    })
-  },
-  ////点击跳转到收货地址
-  navToAddress(){
-    wx.navigateTo({
-      url: '/subpkg/address/address',
-    })
+
   },
 
   /**
@@ -48,9 +20,10 @@ Page({
   onLoad(options) {
     this.storeBindings = createStoreBindings(this,{
       store,
-      fields:['userstatus','wh'],
-      actions:['checkLogin','loginUser','outLogin']
+      fields:['wh'],
+      actions:['loginUser']
     })
+
   },
 
   /**
@@ -78,8 +51,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
- ////卸载store的数据
- this.storeBindings.desroyStoreBindings()
+        ////卸载store的数据
+        this.storeBindings.desroyStoreBindings()
   },
 
   /**

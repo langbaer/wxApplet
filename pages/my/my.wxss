@@ -1,1 +1,114 @@
 /* pages/my/my.wxss */
+image{ 
+  width: 100%;
+  height: 100%;
+}
+.unlogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.loginbox {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.titile {
+  line-height: 200rpx;
+}
+.online {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #3cc51f 50%,#ececec 50%)
+}
+.userinfo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 30%;
+}
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border: 2rpx solid gray;
+  border-radius: 100rpx;
+  overflow: hidden;
+}
+.box1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 10%;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.box11 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.box2 {
+  width: 90%;
+  height: 220rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.box2title {
+  padding-left: 20rpx;
+  width: 90%;
+  height: 70rpx;
+  line-height: 70rpx;
+  box-sizing: border-box;
+}
+.box222 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 150rpx;
+}
+.box22 {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+}
+.box2Text {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.box22Pic {
+  width: 50%;
+  height:  90rpx;
+}
+.box3 {
+  width: 90%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+}
+.box33 {
+  width: 100%;
+  height: 66.6rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  line-height: 66.6rpx;
+  padding-left: 20rpx;
+}

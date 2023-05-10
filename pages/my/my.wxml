@@ -1,2 +1,56 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="unlogin" wx:if="{{!userstatus}}" style="height: {{wh-200}}px;">
+  <view class="loginbox">
+     <view class="titile">您还没有登入哦~</view>
+     <view class="loginbutton"><button type="primary" bindtap="navToAuthorization">登入</button></view>
+  </view>
+</view>
+<view class='online' wx:else="" style="height: {{wh-75}}px;">
+  <view class="userinfo">
+      <view class="avatar"><image src="" mode="widthFix"></image></view>
+      <view class="username">11</view>
+  </view>
+  <view class="box1">
+    <view class="box11">
+      <view class="sum">8</view>
+      <view class="box11text">收藏的店铺</view>
+    </view>
+    <view class="box11">
+      <view class="sum">14</view>
+      <view class="box11text">搜藏的商品</view>
+    </view>
+    <view class="box11">
+      <view class="sum">18</view>
+      <view class="box11text">关注的商品</view>
+    </view>
+    <view class="box11">
+      <view class="sum">11</view>
+      <view class="box11text">足迹</view>
+    </view>
+  </view>
+  <view class="box2">
+    <view class="box2title">我的订单</view>
+    <view class="box222">
+    <view class="box22">
+      <view class="box22Pic"><image src="/image/my/pay.png" mode="widthFix"></image></view>
+      <view class="box2Text">待付款</view>
+    </view>
+    <view class="box22">
+      <view class="box22Pic"><image src="/image/my/receipt.png" mode="widthFix"></image></view>
+      <view class="box2Text">待收货</view>
+    </view>
+    <view class="box22">
+      <view class="box22Pic"><image src="/image/my/refund.png" mode="widthFix"></image></view>
+      <view class="box2Text">退款/退货</view>
+    </view>
+    <view class="box22">
+      <view class="box22Pic"><image src="/image/my/allOrders.png" mode="widthFix"></image></view>
+      <view class="box2Text">全部订单</view>
+    </view>
+  </view>
+  </view>
+  <view class="box3">
+    <view class="box33" bindtap="navToAddress">收货地址</view>
+    <view class="box33">联系客服</view>
+    <view class="box33" bindtap="outLogin1">退出登入</view>
+  </view>
+</view>

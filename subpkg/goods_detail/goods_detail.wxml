@@ -77,6 +77,4 @@
       <view class="submitButton" style="background-color:red;">立即购买</view>
 </view>
 </page-container>
-
-
 <wxs src="/utils/tools.wxs" module="priceKeeptwo"></wxs>

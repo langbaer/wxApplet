@@ -20,19 +20,54 @@ import {promisifyAll} from 'miniprogram-api-promise'
 const wxp = wx.p ={}
 promisifyAll(wx,wxp)
 App({
- 
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    success(res){
+      ////检查是否授权过登入
+      const status = wx.getStorageSync('userstatus')
+      if(!status){
+      return wx.navigateTo({
+        url: '/pages/authorization/authorization',
+      })
       }
-    })
+      wx.request({
+        url: 'http://127.0.0.1/api/login',
+        method:'POST',
+        data:{
+          /////发送code
+          code:res.code
+        },
+        header:{
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res1){
+          if(res1.data.status){
+            return wx.showToast({
+              title:'登入失败，服务器错误',
+              duration:2000,
+              icon:'error'
+            })
+          }
+          wx.setStorage({
+            key:'userstatus',
+            data:1
+          })
+          wx.setStorage({
+            key:'token',
+            data:res1.data.token
+          })
+        }
+      })
+    }
+    }),
+    
 
     //请求数据失败的函数
     wx.$showMsg = function (title = '请检查你的网络设置！', duration = 2000) {
@@ -42,8 +77,9 @@ App({
         icon:'error'
       })
     }
+    
   },
   globalData: {
     userInfo: null
-  }
+  },
 })

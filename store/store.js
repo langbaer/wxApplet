@@ -15,6 +15,14 @@ export const store = observable({
   totalPrice:0,
   ////是否购物车中的商品都在结算状态中 0表示不是，1表示是
   allGoodsState:0,
+  ///////token密钥
+  token:wx.getStorageSync('token')||'',
+  /////登入后用户的状态信息
+  userInfo:{},
+  /////用户的登录状态：0,未登入，1登录中
+  userstatus:wx.getStorageSync('userstatus')||0,
+  /////屏幕高度
+  wh:wx.getSystemInfoSync().windowHeight,
 
   /////改变tabber的状态
   updateTabbarStatus:action(function(step){
@@ -245,6 +253,94 @@ export const store = observable({
     })
     this.totalAllGoodsPrice()
     this.checkoutCarCountStatus()
+  }),
+  //////登入函数
+  loginUser:action(function() {
+    var that = this
+    wx.login({ success(res){
+      console.log(res.code)
+      wx.request({
+        url: 'http://127.0.0.1/api/login',
+        method:'POST',
+        data:{
+          /////发送code
+          code:res.code
+        },
+        header:{
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res1){
+          if(res1.data.status){
+            return wx.$showMsg('登入失败，服务器错误')
+          }
+          that.token = res1.data.token
+          that.userstatus = 1
+          wx.setStorage({
+            key:'userstatus',
+            data:that.userstatus
+          })
+          wx.setStorage({
+            key:'token',
+            data:that.token
+          })
+          wx.showToast({
+            title:'登入成功',
+            duration:2000,
+            icon:'success'
+          })
+          wx.navigateBack({
+            delta: 1
+          })
+        },
+        fail(){
+          return wx.$showMsg('请检查您的网络设置')
+        }
+      })
+    }
+  })
+  }),
+  
+  ////检查是否在登入的函数
+  checkLogin:action(function () {
+    var that = this
+    const aa = wx.request({
+      url: 'http://127.0.0.1/my/status',
+      method:'GET',
+      header:{
+        'authorization':this.token
+      },
+      success(res){
+        console.log(res)
+        if(res.data.status){
+          return wx.$showMsg('您还没有登入哦！')
+        }
+        that.userInfo = res.data.data
+        that.userstatus = 1
+        wx.setStorage({
+          key:'userstatus',
+          data:that.userstatus
+        })
+        console.log(that.userInfo)
+      },
+      fail(){
+        return wx.$showMsg('请检查您的网络设置')
+      }
+    })
+    console.log(aa)
+  }),
+  ////退出登入
+  outLogin:action(function () {
+    console.log('点击了退出登入')
+    this.userstatus = 0
+    wx.setStorage({
+      key:'userstatus',
+      data:this.userstatus
+    })
+    this.token = ''
+    wx.setStorage({
+      key:'token',
+      data:this.token
+    })
   })
 })
 

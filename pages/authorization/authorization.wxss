@@ -1,0 +1,21 @@
+/* pages/authorization/authorization.wxss */
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.box {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  
+}
+.logo {
+  width: 50%;
+}
+.loginButton {
+  padding: 100rpx 0;
+}

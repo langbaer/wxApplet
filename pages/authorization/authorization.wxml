@@ -1,0 +1,7 @@
+<!--pages/authorization/authorization.wxml-->
+<view class="frame" style="height: {{wh}}px;">
+   <view class="box" >
+     <view class="logo"><image src="/image/goodsdetail/login.png" mode="widthFix"></image></view>
+     <view class="loginButton"><button type="primary" bindtap="wxlogin">微信授权登入</button></view>
+   </view>
+</view>

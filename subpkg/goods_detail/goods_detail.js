@@ -115,6 +115,7 @@ Page({
   },
   /////点击在store和本地储存存储cart
   storeCartAddGoods(){
+    this.checkLogin()
     let obj = {
       goods_id:this.data.goods_info.goods_id,
       goods_name:this.data.goods_info.goods_name,
@@ -160,8 +161,8 @@ Page({
      /////请求store的数据
      this.storeBindings = createStoreBindings(this,{
       store,
-      fields:['addressArr','showAddress'],
-      actions:['updateTabbarStatus','updateCartCount','updateShowAddress']
+      fields:['addressArr','showAddress','userstatus'],
+      actions:['updateTabbarStatus','updateCartCount','updateShowAddress','checkLogin']
     })
   },
   ///点击跳转到adress页面

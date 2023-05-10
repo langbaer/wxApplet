@@ -50,6 +50,8 @@
        <view class="totalPriceNumberFrame">
          {{totalPrice}}
        </view>
+
+       
      </view>
      <view class="settlemenButtonFrame">
        <button class="settlemenButton">结算</button>

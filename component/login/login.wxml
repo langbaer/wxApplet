@@ -1,0 +1,8 @@
+<!--component/login/login.wxml-->
+<page-container show="{{show}}" bind:leave="onAfterLeave" bind:enter="onEnter">
+  <view class="loginBoxFrame">
+    <view class="">我的小程序了啦</view>
+    <view>使用微信账号登录</view>
+    <view></view>
+  </view>
+</page-container>
